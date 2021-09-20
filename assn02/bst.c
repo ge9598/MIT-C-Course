@@ -49,7 +49,12 @@ bool find_val(int val, node_t* root) {
  */
 void delete_bst(node_t* root) {
   /* YOUR CODE HERE */
-  
+  if (root == NULL)
+    return;
+  delete_bst(root->left);
+  delete_bst(root->right);
+
+  free(root);
 }
 
 /* Given a pointer to the root, prints all o fthe values in a tree. */
